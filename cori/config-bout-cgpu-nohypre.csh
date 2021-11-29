@@ -86,7 +86,6 @@ if ( "$pkg" == "BOUT-dev" ) then
           -DBUILD_SHARED_LIBS=Off \
           -DBOUT_TESTS=On \
           -DCHECK=1 \
-          -DBOUT_BUILD_EXAMPLES=OFF \
           -DCMAKE_EXPORT_COMPILE_COMMANDS=On \
           -DCMAKE_VERBOSE_MAKEFILE=On \
           -Dgtest_disable_pthreads=On \
