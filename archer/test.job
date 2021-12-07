@@ -1,0 +1,20 @@
+#!/bin/bash --login
+
+#SBATCH --job-name=BOUT-checks
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=128
+#SBATCH --cpus-per-task=1
+#SBATCH --time=0:40:0
+#SBATCH --output=test.log
+#SBATCH --error=test.err
+
+#SBATCH --account=e281-bout
+#SBATCH --partition=standard
+#SBATCH --qos=standard
+
+cd $SLURM_SUBMIT_DIR
+source bout.env
+
+cd BOUT-dev
+
+cmake --build build --target check -j 128
