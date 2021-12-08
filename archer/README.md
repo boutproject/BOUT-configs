@@ -17,6 +17,10 @@
     * Warning: this setup has only been tested when starting with the default
       modules. If you have modules loaded for another project then there may be
       conflicts...
+4. Build the dependencies
+    ```
+    ./build-dependencies.sh
+    ```
 4. Build BOUT++ using one of the scripts provided here. Either
     ```
     ./build.sh
@@ -30,8 +34,12 @@
         both optimised and debug builds can be compiled at the same time, from
         the same source code.
 5. The tests must be run in the batch queue.
-    * For the optimised version run `sbatch test.job`, and examine the output in
-      `test.log` and `test.err`.
+    * Note that the job scripts provided assume that you have access to ARCHER2
+      through the e281-bout project, which is a subgroup of the e281 account
+      belonging to the Plasma HEC Consortium. If this is not the case then you
+      will need to change the `#SBATCH --account=e281-bout` line.
+    * For the optimised version run `sbatch test.job`, and examine the output
+      in `test.log` and `test.err`.
     * For the optimised version run `sbatch test-debug.job`, and examine the
       output in `test-debug.log` and `test-debug.err`.
     * At the time of writing `test-drift-instability` fails with a result
