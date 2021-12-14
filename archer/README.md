@@ -1,3 +1,6 @@
+Quick start
+-----------
+
 1. Clone this repo/branch on ARCHER2
     ```
     git clone git@github.com:boutproject/BOUT-configs -b archer
@@ -48,3 +51,17 @@
       signal test fails.
 6. To build your `PhysicsModel`, see the instructions at
    https://bout-dev.readthedocs.io/en/latest/user_docs/installing.html#using-cmake-with-your-physics-model
+
+
+Notes
+-----
+Optimised build uses flags recommended by Cray, i.e. `-fast` (equivalent to
+`-Ofast -flto`), see
+https://support.hpe.com/hpesc/public/docDisplay?docId=a00115299en_us&page=Performance_Options.html
+The exception is PETSc, which gives a configuration error if C/C++ flags
+include `-fast`:
+```
+Unknown Fortran name mangling: Are you sure the C and Fortran compilers are compatible?
+  Perhaps one is 64 bit and one is 32 bit?
+```
+PETSc configuration instead uses `-Ofast` for C, C++ and Fortran.
