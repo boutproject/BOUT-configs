@@ -1,3 +1,6 @@
 [submodule "archer/BOUT-dev"]
 	path = archer/BOUT-dev
 	url = git@github.com:boutproject/BOUT-dev
+[submodule "BOUT-dev"]
+	path = BOUT-dev
+	url = https://github.com/boutproject/BOUT-dev.git
