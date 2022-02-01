@@ -34,18 +34,14 @@ Quick start
       * The builds are done using CMake, so are out-of-source builds. Therefore
         both optimised and debug builds can be compiled at the same time, from
         the same source code.
-5. Set up Python environment for tests. Using `conda` causes library conflicts
-    when configuring/compiling BOUT++, so it is suggested to use `pip` to
-    install at least a minimum set of packages for the module-provided Python.
-    The default version of `pip` is ancient and causes install errors with
-    `netcdf4`, so we first upgrade pip.
+
+5. Set up Python environment for tests. The configuration here is set up to be
+   compatible with `conda`, so it is suggested to use `conda` to install the
+   needed Python packages.
     ```
-    pip3 install --user --upgrade pip
-    pip3 install --user importlib-metadata netcdf4
-    pip3 install --user --upgrade numpy scipy
+    conda install importlib-metadata netcdf4 numpy scipy
     ```
-6. Before running tests, you need to install the `importlib-metadata` Python
-   package: `pip3 install --user importlib-metadata`. To run the tests, run
+6. To run the tests, run
     ```
     ./test.sh
     ```
