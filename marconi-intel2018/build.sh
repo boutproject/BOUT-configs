@@ -9,6 +9,6 @@ cd ../BOUT-dev
 
 git submodule update --init --recursive
 
-cmake . -B build-gnu-intelmpi -DCMAKE_BUILD_TYPE=Release -DCHECK=0 -DBOUT_DOWNLOAD_SUNDIALS=ON -DBOUT_USE_PETSC=ON -DPETSC_DIR=$DEPS_PATH/petsc-build -DPETSC_ARCH="" -DBOUT_USE_HDF5=OFF -DNC_CONFIG=$DEPS_PATH/netcdf-build/bin/nc-config -DNCXX4_CONFIG=$DEPS_PATH/netcdf-build/bin/ncxx4-config -DFFTW_ROOT=$DEPS_PATH/fftw-build -DBOUT_IGNORE_CONDA_ENV=ON
+cmake . -B build-intel2018 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS_RELEASE="-std=c++11 -O3 -axCORE-AVX512 -march=skylake-avx512 -mtune=skylake-avx512" -DCHECK=0 -DBOUT_DOWNLOAD_SUNDIALS=ON -DBOUT_USE_PETSC=ON -DPETSC_DIR=$DEPS_PATH/petsc-build -DPETSC_ARCH="" -DBOUT_USE_HDF5=OFF -DBOUT_IGNORE_CONDA_ENV=ON
 
-cmake --build build-gnu-intelmpi -j 16
+cmake --build build-intel2018 -j 16
