@@ -2,4 +2,4 @@
 
 cd ../BOUT-dev
 
-cmake --build build-gnu-intelmpi-debug --target check -j 16
+cmake --build build-intel2018-debug --target check -j 16

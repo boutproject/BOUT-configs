@@ -2,4 +2,4 @@
 
 cd ../BOUT-dev
 
-cmake --build build-gnu-intelmpi --target check -j 16
+cmake --build build-intel2020 --target check -j 16
