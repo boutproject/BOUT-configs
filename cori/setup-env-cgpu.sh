@@ -14,7 +14,6 @@ module load cgpu/1.0
 module load gcc/8.3.0
 module load cuda/11.1.1
 module load openmpi/4.0.3
-module load cmake/3.14.4 
 module load intel/19.1.3.304
 
 export SPACK_ROOT=/global/project/projectdirs/bout/BOUT-GPU/spack
@@ -41,6 +40,7 @@ unset CRAY_SITE_LIST_DIR
 
 # and with hypre
 module load petsc-3.13.0-gcc-8.3.0_cgpu-ihyubgk
+module load hypre-2.18.2-gcc-8.3.0_cgpu-f6thqwi
 
 # The following so PETSc tests can always find PETSc lib when linking
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PETSC_DIR}/lib

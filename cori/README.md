@@ -25,5 +25,5 @@ in the environment setup above.
 
 From the BOUT-dev root directory:
 
-    ./config/cori/config-bout-cgpu.sh
+    ../BOUT-configs/cori/config-bout-cgpu.sh
 
