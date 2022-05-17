@@ -62,7 +62,7 @@ if ( "$pkg" == "BOUT-dev" ) then
           -DCMAKE_PREFIX_PATH="${tpl_install_prefix}/raja/share/raja/cmake;${tpl_install_prefix}/umpire/share/umpire/cmake" \
           -DNCXX4_CONFIG:FILEPATH=${module_prefix}/netcdf-cxx4-4.3.1-ptxvbr5iimq3lcapnzs5tw7heniv7mha/bin/ncxx4-config \
           -DNC_CONFIG:FILEPATH=${module_prefix}/netcdf-c-4.7.4-hpuuuxa5vze5qwvqhdzxlpkrigjghgtu/bin/nc-config \
-          -DNetCDF_ROOT=${module_prefix}/netcdf-c-4.7.4-hpuuuxa5vze5qwvqhdzxlpkrigjghgtu/ \
+          -DnetCDF_ROOT=${module_prefix}/netcdf-c-4.7.4-hpuuuxa5vze5qwvqhdzxlpkrigjghgtu/ \
           -DBOUT_USE_NETCDF=On \
           -DBOUT_USE_FFTW=On \
           -DFFTW_ROOT=${module_prefix}/fftw-3.3.8-3nkroqhdwtudny5aifsjujxmzdvdz3jw/ \
