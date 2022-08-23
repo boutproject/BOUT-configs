@@ -1,5 +1,6 @@
-This branch contains configuration for the 4.4 series of BOUT++, on a generic
-Linux machine (e.g. laptop/desktop). It was tested with Linux Mint 20.2.
+This branch contains configuration for the `next` series of BOUT++, on a
+generic Linux machine (e.g. laptop/desktop). It was tested with Linux Mint
+20.2.
 
 Quick start
 -----------
@@ -12,9 +13,9 @@ Quick start
     ```
 2. Clone this repo/branch
     ```
-    git clone git@github.com:boutproject/BOUT-configs -b generic-4.4
+    git clone git@github.com:boutproject/BOUT-configs -b generic-next
     ```
-3. `cd BOUT-configs/generic-4.4`
+3. `cd BOUT-configs/generic-next`
 4. Build the dependencies
     ```
     ./build-dependencies.sh
