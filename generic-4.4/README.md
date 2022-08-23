@@ -4,10 +4,11 @@ Linux machine (e.g. laptop/desktop). It was tested with Linux Mint 20.2.
 Quick start
 -----------
 
-1. Ensure you have some compilers, MPI, FFTW, Lapack, NetCDF, cmake and
-    clang-format installed, e.g.
+1. Ensure you have some compilers, MPI, FFTW, Lapack, NetCDF, cmake,
+   clang-format and python (including headers, required packages, etc.)
+   installed, e.g.
     ```
-    sudo apt install g++ openmpi-bin libfftw3-dev liblapack-dev libnetcdf-c++4-dev cmake clang-format
+    sudo apt install g++ openmpi-bin libfftw3-dev liblapack-dev libnetcdf-c++4-dev cmake clang-format python3-dev python3-numpy python3-scipy python3-netcdf4
     ```
 2. Clone this repo/branch
     ```
