@@ -19,9 +19,9 @@ if [ -z ${PETSC_ARCH+x} ]; then
 fi
 
 mkdir petsc-build
-wget https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.16.1.tar.gz
-tar xzf petsc-3.16.1.tar.gz
-cd petsc-3.16.1
+wget https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.17.4.tar.gz
+tar xzf petsc-3.17.4.tar.gz
+cd petsc-3.17.4
 ./configure COPTFLAGS="-O3" CXXOPTFLAGS="-O3" FOPTFLAGS="-O3" --download-hypre --with-debugging=0 --prefix=../petsc-build
 make -j 4 PETSC_DIR=$PWD PETSC_ARCH=arch-linux-c-opt all
 make -j 4 PETSC_DIR=$PWD PETSC_ARCH=arch-linux-c-opt install
