@@ -1,0 +1,52 @@
+
+module avail netCDF
+# The latest netCDF-C++ matching gompi is gompi-2021b
+module load data/netCDF-C++4/4.3.1-gompi-2021b
+
+# Alternatively if using netCDF
+module load data/netCDF/4.8.1-gompi-2021b
+
+# So load the toolchain version for gompi-2021b
+module avail toolchain/gompi
+module load toolchain/gompi/2021b
+
+# List the modules loaded by the toolchain
+module list
+# They are all built with GCCcore-11.2.0
+
+
+# Load the cmake module matching the compiler (GCCcore-11.2.0)
+module load devel/CMake/3.22.1-GCCcore-11.2.0
+
+
+# Load the git module matching the compiler (GCCcore-11.2.0)
+module avail git
+module load tools/git/2.33.1-GCCcore-11.2.0-nodocs
+
+
+# Also load the fftw module (matching gompi-2021b)
+module avail fftw
+module load numlib/FFTW/3.3.10-gompi-2021b
+
+
+# Also load the lapack module (matching gompi-2021b)
+module avail lapack
+module load numlib/ScaLAPACK/2.1.0-gompi-2021b-fb
+
+
+# Configure cmake
+cmake -S BOUT-dev -B build_bout -DBOUT_DOWNLOAD_NETCDF_CXX4=ON
+
+# Build BOUT++ with cmake
+cmake --build build_bout -j 4
+
+
+# Build a physics model with cmake
+cmake --build build_bout --target blob2d
+
+
+# Run the model
+cd build_bout/examples/blob2d
+./blob2d --help
+mpirun -np 2 ./blob2d -d delta_10 nout=2
+
