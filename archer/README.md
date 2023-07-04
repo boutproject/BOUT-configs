@@ -51,6 +51,9 @@ Quick start
       signal test fails.
 6. To build your `PhysicsModel`, see the instructions at
    https://bout-dev.readthedocs.io/en/latest/user_docs/installing.html#using-cmake-with-your-physics-model
+   Note: you will likely need to use the flag `-DCMAKE_CXX_COMPILER=CC` when 
+   compiling your application with CMake. This can help CMake find BLAS
+   correctly in ARCHER2's Cray environment.
 
 
 Notes
