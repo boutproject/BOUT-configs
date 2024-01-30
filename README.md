@@ -1,26 +1,32 @@
-Configuration scripts
-=====================
+# Configuration scripts
 
-The CMake and autotools (configure/make) scripts supplied with BOUT++
-should be able to automatically find and configure BOUT++ in most
-cases. Where a complex configuration is desired, for example including
-many dependencies (esp. complex dependencies like PETSc), or compiling
-for GPUs, configuration can be quite complex.
+This repo contains scripts to setup the environment and provide build 
+configurations for BOUT++ on deployment machines.
 
-The files in this directory are intended to be convenient shortcuts for
-configuration on particular machines. Where there are many scripts, these
-are put into sub-directories (e.g. "cori" and "lassen"). 
+There is one sub-directory for each machine ("cori", "lassen", "perlmutter").
+See the README of each sub-directory for machine specific instructions.
 
-Environment
------------
+The repo includes `spack` (release v0.21.1) as a submodule, used to create
+reproducible, self-contained environments on different machines.
 
-Scripts which set up the environment, for example loading and unloading
-modules, start with `setup` or `setup-env`. These are typically modifying
-shell environments and so should be invoked with `source`.
+:construction: This repo is under active development, `perlmutter` configuration
+is in a stable state, other machines are under update.
+Issues and PRs to `main` are welcome.
 
-BOUT++ configuration
---------------------
+## Usage
 
-The wrappers around CMake (or configure) start with `config` or `config-bout`.
-These are shell scripts which can be run without `source`. 
+Clone the repo and initialize submodules
+```
+git clone --recurse-submodules https://github.com/boutproject/BOUT-configs.git
+```
 
+Enter the machine sub-directory desired and follow the instructions.
+Typical usage is to `source setup-env.sh` to activate the spack enviroment,
+which will install any needed software dependencies through `spack`, and
+configure BOUT++ using either scripts under the machine's `scripts` directory
+or with the user's own configuration.
+
+## Contact
+
+Feel free to contact Giorgis Georgakoudis <georgakoudis1@llnl.gov> for comments,
+suggestions, or questions.
