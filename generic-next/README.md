@@ -13,7 +13,7 @@ Quick start
     ```
 2. Clone this repo/branch
     ```
-    git clone git@github.com:boutproject/BOUT-configs -b generic-next
+    git clone https://github.com/boutproject/BOUT-configs.git -b generic-next
     ```
 3. `cd BOUT-configs/generic-next`
 4. Build the dependencies
