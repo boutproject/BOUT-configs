@@ -8,4 +8,4 @@ export SPACK_USER_CONFIG_PATH=${PWD}/.spack
 export SPACK_USER_CACHE_PATH=${PWD}/.spack
 . ${PWD}/../spack/share/spack/setup-env.sh
 spack env activate -p boutdev-spack-env
-echo $(spack install)
+echo $(spack install --fail-fast)
