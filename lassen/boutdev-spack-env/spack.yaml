@@ -1,0 +1,68 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  specs:
+  - raja@git.v2023.06.1+cuda~examples~exercises+openmp cuda_arch=70
+  - umpire@2022.03.1~shared+cuda~examples+numa+openmp cuda_arch=70
+  - fmt@10.0.0
+  - netcdf-cxx4@4.3.1
+  - fftw@3.3.10~mpi
+  - hypre-cmake@git.v2.31.0~shared+cuda+umpire+mpi~superlu-dist cuda_arch=70
+  view: true
+  concretizer:
+    unify: true
+  repos:
+  - $spack/../repo
+  packages:
+    all:
+      target: [ppc64le]
+      compiler: [gcc@12.2.1]
+      providers:
+        mpi: [spectrum-mpi]
+        blas: [openblas]
+        lapack: [openblas]
+    cmake:
+      externals:
+      - spec: cmake@3.29.2
+        modules:
+        - cmake/3.29.2
+      buildable: false
+    gmake:
+      externals:
+      - spec: gmake@4.2.1
+        prefix: /usr
+      buildable: false
+    spectrum-mpi:
+      externals:
+        - spec: spectrum-mpi@rolling-release
+          modules:
+            - spectrum-mpi/rolling-release
+      buildable: false
+    cuda:
+      externals:
+      - spec: cuda@12.2.2
+        modules:
+        - cuda/12.2.2
+      buildable: false
+    cub:
+      externals:
+        - spec: cub@2.1.0
+          prefix: /usr/tce/packages/cuda/cuda-12.2.2
+      buildable: false
+  compilers:
+  - compiler:
+      spec: gcc@=12.2.1
+      paths:
+        cc: /usr/tce/packages/gcc/gcc-12.2.1/bin/gcc
+        cxx: /usr/tce/packages/gcc/gcc-12.2.1/bin/g++
+        f77: /usr/tce/packages/gcc/gcc-12.2.1/bin/gfortran
+        fc: /usr/tce/packages/gcc/gcc-12.2.1/bin/gfortran
+      flags: {}
+      operating_system: rhel7
+      target: ppc64le
+      modules: []
+      environment: {}
+      extra_rpaths: []
+    
