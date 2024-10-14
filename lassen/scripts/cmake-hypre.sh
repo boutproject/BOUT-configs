@@ -7,8 +7,8 @@ cmake -S BOUT-dev -B build-hypre \
     -DBOUT_ENABLE_UMPIRE=on \
     -DBOUT_ENABLE_CUDA=on \
     -DBOUT_USE_HYPRE=on \
-    -DCMAKE_CUDA_ARCHITECTURES=80 \
-    -DCUDA_ARCH=compute_80,code=sm_80 \
+    -DCMAKE_CUDA_ARCHITECTURES=70 \
+    -DCUDA_ARCH=compute_70,code=sm_70 \
     -DBOUT_ENABLE_WARNINGS=off \
     -DBOUT_USE_SYSTEM_FMT=on
 
