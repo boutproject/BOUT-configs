@@ -13,9 +13,9 @@ fi
 
 cd dependencies
 mkdir petsc-build
-wget https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.16.3.tar.gz
-tar xzf petsc-3.16.3.tar.gz
-cd petsc-3.16.3
+wget https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.22.3.tar.gz
+tar xzf petsc-3.22.3.tar.gz
+cd petsc-3.22.3
 ./configure CC=$MPICC CXX=$MPICXX FC=$MPIF90 COPTFLAGS="-O3" CXXOPTFLAGS="-O3" FOPTFLAGS="-O3" --download-hypre --with-debugging=0 --prefix=../petsc-build
 make -j 16 PETSC_DIR=$PWD PETSC_ARCH=arch-linux-c-opt all
 make -j 16 PETSC_DIR=$PWD PETSC_ARCH=arch-linux-c-opt install
