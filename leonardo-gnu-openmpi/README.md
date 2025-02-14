@@ -1,19 +1,19 @@
 Quick start
 -----------
 
-1. Clone this repo/branch on Marconi
+1. Clone this repo/branch on Leonardo
     ```
-    git clone git@github.com:boutproject/BOUT-configs -b marconi
+    git clone git@github.com:boutproject/BOUT-configs -b leonardo
     ```
-2. `cd BOUT-configs/marconi-gnu-intelmpi2018`
+2. `cd BOUT-configs/leonardo-gnu-openmpi`
 3. Set up your environment
     ```
     source bout.env
     ```
-    * If you usually want BOUT++ on Marconi, it is probably useful to put this
+    * If you usually want BOUT++ on Leonardo, it is probably useful to put this
       setup into your .bashrc, e.g. add a line like
         ```
-        source /work/FUA35_SOLBOUT5/yourusername/BOUT-configs/marconi-gnu-intelmpi2018/bout.env
+        source /work/FUA35_SOLBOUT5/yourusername/BOUT-configs/leonardo-gnu-openmpi/bout.env
         ```
     * Warning: this setup has only been tested when starting with the default
       modules. If you have modules loaded for another project then there may be
@@ -34,6 +34,7 @@ Quick start
       * The builds are done using CMake, so are out-of-source builds. Therefore
         both optimised and debug builds can be compiled at the same time, from
         the same source code.
+
 5. Set up Python environment for tests. The configuration here is set up to be
    compatible with `conda`, so it is suggested to use `conda` to install the
    needed Python packages.
@@ -53,6 +54,6 @@ Quick start
    https://bout-dev.readthedocs.io/en/latest/user_docs/installing.html#using-cmake-with-your-physics-model.
    The build directories are at
    ```
-   BOUT-configs/BOUT-dev/build-gnu-intelmpi2018
-   BOUT-configs/BOUT-dev/build-gnu-intelmpi2018-debug
+   BOUT-configs/BOUT-dev/build-gnu-openmpi
+   BOUT-configs/BOUT-dev/build-gnu-openmpi-debug
    ```
